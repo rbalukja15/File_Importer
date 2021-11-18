@@ -41,4 +41,16 @@ export class ImportFile {
         })
     }
 
+    public async deleteRecipe(id: number): Promise<void> {
+        const repository = getRepository(Recipe);
+
+        const foundRecipe = await repository.findOne({ id });
+
+        if (foundRecipe) {
+            await repository.remove(foundRecipe);
+            console.log('Deleted successfully');
+        } else {
+            console.log('Recipe not found');
+        }
+    }
 }
