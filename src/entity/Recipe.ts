@@ -1,11 +1,8 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import {Entity, Column} from "typeorm";
+import {Common} from "./Common";
 
 @Entity()
-export class Recipe {
-
-    @PrimaryGeneratedColumn()
-    id: number;
-
+export class Recipe extends Common {
     @Column()
     name_en: string;
 
@@ -20,7 +17,4 @@ export class Recipe {
 
     @Column()
     preparation_time: number;
-
-    @Column({ default: false })
-    is_deleted: boolean;
 }

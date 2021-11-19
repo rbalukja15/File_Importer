@@ -1,5 +1,5 @@
-import { SoftDelete } from "./SoftDelete";
 import {PrimaryGeneratedColumn, Column, BeforeUpdate} from "typeorm";
+import { SoftDelete } from "./SoftDelete";
 
 export abstract class Common extends SoftDelete {
     @PrimaryGeneratedColumn()
